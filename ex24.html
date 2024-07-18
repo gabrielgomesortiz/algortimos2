@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" id="preco" placeholder="escreva uma frase preco" list="frase">
+    <input type="number" id="juros" placeholder="escreva uma frase juros" list="frase">
+    <input type="number" id="NumDeMeses" placeholder="escreva uma frase NumDeMeses" list="frase">
+    <br>
+    <button onclick="escreva()">CLICK</button>
+    <br>
+    <div id="saida"> resposta aqui </div>
+    <script>
+        function escreva() {
+            let preco = parseInt(document.getElementById("preco").value);
+            let juros = parseInt(document.getElementById("juros").value);
+            let NDM = parseInt(document.getElementById("NumDeMeses").value);
+            let funcao = TotalApagar(preco, juros, NDM)
+            document.getElementById("saida").innerHTML = funcao
+        }
+        function TotalApagar(preco, juros, NDM) {
+            let armazenaOsJurosAplicados = '<strong>Os juros aplicados foram:</strong>'+'<br>';
+            let soma = 0
+            let armazenaTudo='';
+            for (let i = 1; i <= NDM; i++) {
+                soma = (juros / 100 * preco) + preco
+                preco = soma;
+                armazenaOsJurosAplicados += preco.toFixed(2)+'<br>';
+            }
+            let TotalApagar = soma / NDM
+                armazenaTudo=armazenaOsJurosAplicados +'<br>'+'<strong>por mes vc pagará R$: </strong>'+ TotalApagar.toFixed(2)
+            return armazenaTudo;
+        }
+    </script>
+</body>
+
+</html>

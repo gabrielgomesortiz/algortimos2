@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inputnome" placeholder="escreva uma frase" list="frase">
+    <br>
+    <button onclick="escreva()">CLICK</button>
+    <br>
+    <div id="saida"> resposta aqui </div>
+    <script>
+        function escreva(){
+            let  numeros= document.getElementById("inputnome").value;
+            let array= numeros.split(",").map(Number);
+            let funcao= verificarMaiorNum(array);
+            document.getElementById("saida").innerText=funcao
+        }
+        function verificarMaiorNum(array){
+            let maior = array[0];
+            for(let i = 1; i < array.length; i++){
+                if(array[i] > maior){
+                    maior = array[i];
+                }
+            }
+            let menor=maior
+            for(let i = 0; i < array.length; i++){
+                if(array[i] < menor){
+                    menor = array[i];
+                }
+            }
+            let resposta='os numeros sao ['+menor+', '+maior+']'
+            return resposta;
+        }
+    </script>
+</body>
+</html>

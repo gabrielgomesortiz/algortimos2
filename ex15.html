@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="inputnome" placeholder="escreva um nome" list="nome">
+    <datalist id="nome">
+        <option value="Gabriel Gomes Ortiz">
+        <option value="Rogerio Skylab">
+        <option value="Neymar Perna Manca">
+        <option value="Hércules da Silsa Santos">
+    </datalist>
+    <br>
+    <button onclick="escreva()">CLICK</button>
+    <br>
+    <div id="resp"> resposta aqui </div>
+    <script>
+        function escreva() {
+            let nome = document.getElementById("inputnome").value;
+            let sobrenome = 0;
+            for (let i = nome.length - 1; i >= 0; i--) {
+                if (nome.charAt(i) === " ") {
+                    sobrenome = i;
+                    break;
+                }
+            }
+            let funcao= trabalharNome(nome,sobrenome)
+            document.getElementById("resp").innerText = funcao;
+        }
+        function trabalharNome(nome,sobrenome){
+            let resp = "";
+            for (let i = sobrenome; i < nome.length; i++) {
+                resp += nome.charAt(i)
+            }
+            resp += ','
+            for (let i = 0; i < sobrenome; i++) {
+    
+                resp += nome.charAt(i)
+            }
+            return resp;    
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="termo" placeholder="digite seu termo">
+    <br>
+    <button onclick="calcularNumPares()">click</button>
+    <br>
+    <div id="resp"></div>
+    <script>
+        function calcularNumPares(){
+            let termo= parseInt(document.getElementById("termo").value);
+            let funcao= descobrirNum(termo);
+            document.getElementById("resp").innerText=funcao;
+        }
+        function descobrirNum(termo){
+            let soma=0;
+            for(let i=0;i<=termo;i=i+2){
+                soma+= i 
+            }
+            return soma;
+        }
+    </script>
+</body>
+</html>

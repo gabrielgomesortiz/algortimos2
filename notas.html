@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="x1">x1</label>
+    <input type="number" id="x1">
+    <br>
+    <label for="x2">x2</label>
+    <input type="number" id="x2">
+    <br>
+    <label for="y1">y1</label>
+    <input type="number" id="y1">
+    <br>
+    <label for="y2">y2</label>
+    <input type="number" id="y2">
+    <br>
+    <button onclick="verificacao()">click</button>
+    <br>
+    <div id="saida">...</div>
+    <script>
+        function verificacao(){  
+            let n1= parseFloat(document.getElementById("x1").value);
+            let n2= parseFloat(document.getElementById("x2").value);
+            let n3= parseFloat(document.getElementById("y1").value);
+            let n4= parseFloat(document.getElementById("y2").value);
+            let media= (n1+n2+n3+n4)/4;
+            let funcao= condicao(media);
+            document.getElementById("saida").innerText=funcao;
+        }
+        function condicao(media){
+            let resp='';
+            if(media >= 9.0){
+                resp = 'Vc esta aprovado pois tirou A';
+            }
+            else if(media >= 7.5){
+                resp = 'Vc esta aprovado pois tirou B';
+            }
+            else if(media >= 6.0){
+                resp = 'Vc esta aprovado pois tirou C';
+            }
+            else if(media >= 4.0){
+                resp = 'Vc esta reprovado pois tirou D';
+            }
+            else {
+                resp = 'Vc esta reprovado pois tirou E';
+            }
+            return resp;
+        }
+
+    </script>
+</body>
+</html>

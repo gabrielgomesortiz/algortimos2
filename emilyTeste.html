@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h4>digite alguns numeros que vou deixar apenas os numeros pares</h4>
+    <label for="num">Digite alguns numeros </label>
+    <input type="text" id="num">
+    <br>
+    <input type="button" value="calcular" onclick="calcular()">
+    <br>
+    <div id="saida"></div>
+    <script>
+        function ficaSoPar(n) {
+            let ns = n.split(",");
+            let num = ns.map(Number);
+            let p = 0;
+            let s = '';
+            for (let i = 0; i < num.length; i++) {
+                p = num[i]
+                if (p % 2 === 0) {
+                    s += p+',';
+                }
+            }
+            return s;
+        }
+        function calcular() {
+            let n = document.getElementById("num").value;
+            let s = ficaSoPar(n);
+            document.getElementById("saida").innerText = s;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="idades">insira as idades</label>
+    <input type="text" id="idades">
+    <br>
+    <button onclick="idades()">click</button>
+    <br>
+    <div id="saida"></div>
+    <script>
+        function idades() {
+            let idades = document.getElementById("idades").value;
+            let dividaAsIdades = idades.split(/\W+/).map(Number);
+            let cont = 0
+            let descAno = 0
+            let bixestos = 0
+            let soma = 0
+            let soma2 = 0
+            let media = 0
+            for (let i = 0; i < dividaAsIdades.length; i++) {
+                if (dividaAsIdades[i] >= 21) {
+                    cont++
+                }
+            }
+            for (let j = 0; j < dividaAsIdades.length; j++) {
+                descAno = 2024 - dividaAsIdades[j]
+                if (descAno % 4 == 0) {
+                    bixestos++
+                }
+            }
+            for (let k = 0; k < dividaAsIdades.length; k++) {
+                soma += dividaAsIdades[k]
+            }
+            for (let l = 0; l < dividaAsIdades.length; l++) {
+                soma2++
+            }
+            media = soma / soma2;
+            document.getElementById("saida").innerText = 'pesoas com mais de 21 anos:' + cont + '\n ' + 'quantos nasceram em anos bissextos:' + bixestos + '\n' + 'soma das idades:' + soma + '\n ' + 'e a media das idades:' + media
+        }
+    </script>
+</body>
+
+</html>

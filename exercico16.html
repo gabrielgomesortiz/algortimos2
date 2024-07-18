@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inputnome" placeholder="escreva uma frase" list="frase">
+    <br>
+    <button onclick="escreva()">CLICK</button>
+    <br>
+    <div id="saida"> resposta aqui </div>
+    <script>
+        function escreva(){
+            let  frase= document.getElementById("inputnome").value;
+            let armazena=0;
+            for(let i=0; i<frase.length;i++){
+                let l=frase[i].toLowerCase();
+                armazena+= funcao(l)
+            }
+        document.getElementById("saida").innerText=armazena;
+        }
+        function funcao(l){
+            let retorno=0
+            if(l==='a'||l==='á'||l==='à'||l==='â'||l==='ã'||l==='á'){
+                   retorno++
+            }
+            return retorno;
+        }
+    </script>
+</body>
+</html>

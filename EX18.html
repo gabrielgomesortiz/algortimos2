@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inputnome" placeholder="escreva uma frase" list="frase">
+    <br>
+    <button onclick="escreva()">CLICK</button>
+    <br>
+    <div id="saida"> resposta aqui </div>
+    <script>
+        function escreva(){
+            let  frase= document.getElementById("inputnome").value;
+            let funcao= inverter(frase)
+            document.getElementById("saida").innerText=funcao;
+        }
+        function inverter(frase){
+            let armazena="";
+            for(let i=frase.length-1;i>=0;i--){
+              armazena+= frase[i]
+          }
+          return armazena;
+        }
+    </script>
+</body>
+</html>

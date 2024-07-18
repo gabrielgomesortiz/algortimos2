@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="num">
+    <br>
+    <button onclick="quebraEsoma()">click1</button>
+    <br>
+    <div id="saida"></div>
+    <script>
+        function quebraEsoma(){
+            let num= document.getElementById("num").value;
+            let funcao= somaDigitos(num);
+            document.getElementById("saida").innerText= funcao
+        }
+        function somaDigitos(num){
+            let soma=0
+            let AddEspco=''
+            for(let i=0; i<num.length;i++){   
+                AddEspco+= num[i]+"+"
+            }
+            let trasfomaEmNum= AddEspco.split("+").map(Number);
+            for(let j=0; j<trasfomaEmNum.length;j++){
+                soma+= trasfomaEmNum[j]
+            }
+            let armazena=soma +' e ('+AddEspco+')'
+            return armazena;
+        }
+    </script>
+</body>
+</html>

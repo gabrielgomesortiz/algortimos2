@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>idade</title>
+</head>
+
+<body>
+    <label for="idade">informe a idade: </label>
+    <input type="number" id="idade">
+    <br>
+    <input type="button" value="calcular" onclick="calcular()">
+    <div id="saida">..</div>
+    <script>
+        function calcular() {
+            let idade = parseInt(document.getElementById("idade").value)
+            let f = verificar(idade);
+            document.getElementById("saida").innerText = f
+        }
+
+        function verificar(idade) {
+            let resp = "";
+            if (idade <= 12) {
+                resp = "vc é criança"
+            }
+            else if (idade <= 18) {
+                resp = "vc é adolescente"
+            }
+            else if (idade <= 60) {
+                resp = "vc e adulto"
+            }
+            else {
+                resp = "vc é idoso"
+            }
+            return resp;
+        }
+    </script>
+</body>
+
+</html>
